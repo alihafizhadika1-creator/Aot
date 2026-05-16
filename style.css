@@ -140,7 +140,7 @@
     .hero-section {
       position: relative;
       min-height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=2070&auto=format');
+      background-image: url('image/utama.webp');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -241,24 +241,48 @@
       transform: scale(1.02);
     }
 
-    /* JENDELA MENGAMBANG PORTRAIT */
-    .floating-card-portrait {
-      background: rgba(20, 30, 45, 0.8);
-      backdrop-filter: blur(14px);
-      border-radius: 32px;
-      padding: 32px 28px;
-      border: 1px solid rgba(255,255,255,0.25);
-      box-shadow: 0 35px 55px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-      max-width: 320px;
-      width: 100%;
-      min-height: 400px;
-      display: flex;
-      flex-direction: column;
-      margin-left: auto;
-      margin-right: 0;
-    }
+/* JENDELA MENGAMBANG PORTRAIT */
+.floating-card-portrait {
+  background: url("image/muka.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 32px;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 35px 55px rgba(0,0,0,0.4);
+
+  width: 340px;          /* <--- ini yang bikin ukuran “jadi” */
+  height: 520px;         /* <--- vertikal lebih tegas */
+  padding: 32px 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-left: auto;
+  margin-right: 0;
+
+  color: white;
+}
+
+/* biar isi tetap terbaca di atas gambar */
+.floating-card-portrait::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 0;
+}
+
+/* semua isi card di atas overlay */
+.floating-card-portrait > * {
+  position: relative;
+  z-index: 1;
+}
     .floating-card-portrait:hover {
       transform: translateY(-8px);
     }
@@ -397,7 +421,7 @@
     .cta-section {
       position: relative;
       min-height: 60vh;
-      background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format');
+      background-image: url('image/RUMBLING.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
